@@ -86,8 +86,8 @@ class Cont_Args:
     umin = jnp.array([-1.0,-1.0],dtype=jnp.float32)
 
     # 計算用行列
-    bar_C = np.concatenate([jnp.eye(action_dim,dtype=jnp.float32),-jnp.eye(action_dim,dtype=jnp.float32)],0)
-    bar_d = np.concatenate([umax,-umin],0)
+    bar_C = jnp.concatenate([jnp.eye(action_dim,dtype=jnp.float32),-jnp.eye(action_dim,dtype=jnp.float32)],0)
+    bar_d = jnp.concatenate([umax,-umin],0)
 
     # 速度制限のバリア関数の重み
     b = 10
